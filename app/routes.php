@@ -14,3 +14,19 @@
 Route::get('/', function() {
   return View::make('hello');
 });
+
+Route::resource('users', 'UsersController');
+
+Route::resource('companies', 'CompaniesController');
+
+Route::resource('test_types', 'Test_typesController');
+
+Route::resource('variables', 'VariablesController');
+
+Route::resource('variable_details', 'Variable_detailsController');
+
+Route::resource('tests', 'TestsController');
+
+Route::resource('questions', 'QuestionsController');
+
+Route::resource('answers', 'AnswersController');
