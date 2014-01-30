@@ -11,4 +11,20 @@ class Test extends Eloquent {
     'end_date' => 'required'
   );
 
+  public function company() {
+    return $this->belongsTo('Company');
+  }
+
+  public function testType() {
+    return $this->belongsTo('Test_type');
+  }
+
+  public function question() {
+    return $this->hasMany('Question');
+  }
+
+  public function userTest() {
+    return $this->hasMany('User_test');
+  }
+
 }

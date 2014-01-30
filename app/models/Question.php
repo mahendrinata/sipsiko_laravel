@@ -7,4 +7,12 @@ class Question extends Eloquent {
     'description' => 'required'
   );
 
+  public function test() {
+    return $this->belongsTo('Test');
+  }
+
+  public function answer() {
+    return $this->hasMany('Answer');
+  }
+
 }

@@ -7,4 +7,8 @@ class Variable_detail extends Eloquent {
     'description' => 'required'
   );
 
+  public function variable() {
+    return $this->belongsTo('Variable');
+  }
+
 }

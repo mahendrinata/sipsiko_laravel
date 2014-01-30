@@ -15,6 +15,7 @@ class CreateAnswersTable extends Migration {
       $table->text('description');
       $table->integer('value');
       $table->integer('question_id')->index();
+      $table->integer('variable_id')->index();
       $table->timestamps();
     });
   }
