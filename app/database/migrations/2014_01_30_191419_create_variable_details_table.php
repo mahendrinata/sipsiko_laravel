@@ -11,6 +11,7 @@ class CreateVariableDetailsTable extends Migration {
    */
   public function up() {
     Schema::create('variable_details', function($table) {
+      $table->engine = 'MYISAM';
       $table->increments('id');
       $table->text('description');
       $table->string('status')->index();

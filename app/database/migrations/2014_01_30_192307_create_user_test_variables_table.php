@@ -11,6 +11,7 @@ class CreateUserTestVariablesTable extends Migration {
    */
   public function up() {
     Schema::create('user_test_variables', function($table) {
+      $table->engine = 'MYISAM';
       $table->increments('id');
       $table->integer('value')->nullable();
       $table->integer('user_test_id')->index();

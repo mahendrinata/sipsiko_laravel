@@ -11,6 +11,7 @@ class CreateTestsTable extends Migration {
    */
   public function up() {
     Schema::create('tests', function($table) {
+      $table->engine = 'MYISAM';
       $table->increments('id');
       $table->string('name');
       $table->text('description')->nullable();

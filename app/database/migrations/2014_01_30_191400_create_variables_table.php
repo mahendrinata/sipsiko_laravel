@@ -11,6 +11,7 @@ class CreateVariablesTable extends Migration {
    */
   public function up() {
     Schema::create('variables', function($table) {
+      $table->engine = 'MYISAM';
       $table->increments('id');
       $table->string('name');
       $table->text('description')->nullable();

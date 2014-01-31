@@ -11,6 +11,7 @@ class CreateEmployeesTable extends Migration {
    */
   public function up() {
     Schema::create('employees', function($table) {
+      $table->engine = 'MYISAM';
       $table->increments('id');
       $table->string('status');
       $table->integer('company_id')->index();

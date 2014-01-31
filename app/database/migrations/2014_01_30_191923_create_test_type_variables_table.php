@@ -11,6 +11,7 @@ class CreateTestTypeVariablesTable extends Migration {
    */
   public function up() {
     Schema::create('test_type_variables', function($table) {
+      $table->engine = 'MYISAM';
       $table->increments('id');
       $table->integer('test_type_id')->index();
       $table->integer('variable_id')->index();

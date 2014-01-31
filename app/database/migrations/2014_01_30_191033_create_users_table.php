@@ -11,6 +11,7 @@ class CreateUsersTable extends Migration {
    */
   public function up() {
     Schema::create('users', function($table) {
+      $table->engine = 'MYISAM';
       $table->increments('id');
       $table->string('username')->unique();
       $table->string('first_name');

@@ -11,6 +11,7 @@ class CreateAnswersTable extends Migration {
    */
   public function up() {
     Schema::create('answers', function($table) {
+      $table->engine = 'MYISAM';
       $table->increments('id');
       $table->text('description');
       $table->integer('value');

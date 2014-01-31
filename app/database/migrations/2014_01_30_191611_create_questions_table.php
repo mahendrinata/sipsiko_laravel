@@ -11,6 +11,7 @@ class CreateQuestionsTable extends Migration {
    */
   public function up() {
     Schema::create('questions', function($table) {
+      $table->engine = 'MYISAM';
       $table->increments('id');
       $table->text('description');
       $table->string('status')->index();

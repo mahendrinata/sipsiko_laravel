@@ -11,6 +11,7 @@ class CreateCompaniesTable extends Migration {
    */
   public function up() {
     Schema::create('companies', function($table) {
+      $table->engine = 'MYISAM';
       $table->increments('id');
       $table->string('slug')->unique();
       $table->string('name');
