@@ -4,7 +4,7 @@ class Company extends Eloquent {
 
   protected $guarded = array();
   public static $rules = array(
-    'slug' => 'required',
+    'slug' => 'required|alpha_num||unique:companies',
     'name' => 'required',
   );
 
