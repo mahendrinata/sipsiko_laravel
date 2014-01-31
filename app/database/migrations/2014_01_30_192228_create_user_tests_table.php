@@ -12,8 +12,8 @@ class CreateUserTestsTable extends Migration {
   public function up() {
     Schema::create('user_tests', function($table) {
       $table->increments('id');
-      $table->integer('spent_time');
-      $table->string('status');
+      $table->integer('spent_time')->nullable();
+      $table->string('status')->index();
       $table->integer('user_id')->index();
       $table->integer('test_id')->index();
       $table->timestamps();

@@ -24,7 +24,7 @@ class CreateTestTypeVariablesTable extends Migration {
    * @return void
    */
   public function down() {
-    Schema::drop('test_type_variable');
+    Schema::drop('test_type_variables');
   }
 
 }

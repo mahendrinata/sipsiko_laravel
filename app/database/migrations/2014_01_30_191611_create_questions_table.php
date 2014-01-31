@@ -13,7 +13,7 @@ class CreateQuestionsTable extends Migration {
     Schema::create('questions', function($table) {
       $table->increments('id');
       $table->text('description');
-      $table->string('status');
+      $table->string('status')->index();
       $table->integer('test_id')->index();
       $table->timestamps();
     });

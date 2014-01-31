@@ -13,11 +13,11 @@ class CreateTestsTable extends Migration {
     Schema::create('tests', function($table) {
       $table->increments('id');
       $table->string('name');
-      $table->text('description');
-      $table->integer('duration');
-      $table->date('start_date');
-      $table->date('end_date');
-      $table->string('status');
+      $table->text('description')->nullable();
+      $table->integer('duration')->nullable();
+      $table->date('start_date')->nullable();
+      $table->date('end_date')->nullable();
+      $table->string('status')->index();
       $table->boolean('is_public');
       $table->integer('company_id')->index();
       $table->integer('test_type_id')->index();

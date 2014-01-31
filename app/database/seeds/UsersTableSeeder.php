@@ -3,14 +3,48 @@
 class UsersTableSeeder extends Seeder {
 
   public function run() {
-    // Uncomment the below to wipe the table clean before populating
-    // DB::table('users')->truncate();
+    DB::table('users')->truncate();
 
-    $users = array(
+    $faker = Faker\Factory::create('en_US');
+    $faker->seed(1234);
+    
+    $passwordDefault = '12345';
+    
+    $users[] = array(
+        'username' => 'admin',
+        'first_name' => 'Administrator',
+        'middle_name' => NULL,
+        'last_name' => NULL,
+        'email' => 'admin@sipsiko.com',
+        'address' => 'Jl. Penyu No. 40 Bandung',
+        'phone' => '+6285721821555',
+        'description' => 'Administrator SIPSIKO APP',
+        'password' => Hash::make($passwordDefault),
+        'activation_code' => md5(Hash::make($passwordDefault)),
+        'status' => 'ACTIVE',
+        'created_at' => date('Y-m-d H:i:s'),
+        'updated_at' => date('Y-m-d H:i:s')
     );
 
-    // Uncomment the below to run the seeder
-    // DB::table('users')->insert($users);
+    for ($i = 0; $i < 24; $i++) {
+      $users[] = array(
+        'username' => $faker->userName,
+        'first_name' => $faker->firstName,
+        'middle_name' => $faker->firstName,
+        'last_name' => $faker->lastName,
+        'email' => $faker->email,
+        'address' => $faker->address,
+        'phone' => $faker->phoneNumber,
+        'description' => $faker->text,
+        'password' => Hash::make($passwordDefault),
+        'activation_code' => md5(Hash::make($passwordDefault)),
+        'status' => 'ACTIVE',
+        'created_at' => $faker->dateTime,
+        'updated_at' => $faker->dateTime
+      );
+    }
+
+    DB::table('users')->insert($users);
   }
 
 }

@@ -13,9 +13,9 @@ class CreateVariablesTable extends Migration {
     Schema::create('variables', function($table) {
       $table->increments('id');
       $table->string('name');
-      $table->text('description');
+      $table->text('description')->nullable();
       $table->string('status');
-      $table->integer('company_id')->index();
+      $table->integer('company_id')->index()->nullable();
       $table->timestamps();
     });
   }

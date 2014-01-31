@@ -14,8 +14,8 @@ class CreateCompaniesTable extends Migration {
       $table->increments('id');
       $table->string('slug')->unique();
       $table->string('name');
-      $table->text('description');
-      $table->string('status');
+      $table->text('description')->nullable();
+      $table->string('status')->index();
       $table->integer('user_id')->index();
       $table->timestamps();
     });

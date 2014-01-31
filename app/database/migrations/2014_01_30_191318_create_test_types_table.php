@@ -13,9 +13,9 @@ class CreateTestTypesTable extends Migration {
     Schema::create('test_types', function($table) {
       $table->increments('id');
       $table->string('name');
-      $table->text('description');
-      $table->string('status');
-      $table->integer('company_id')->index();
+      $table->text('description')->nullable();
+      $table->string('status')->index();
+      $table->integer('company_id')->index()->nullable();
       $table->timestamps();
     });
   }

@@ -13,9 +13,9 @@ class CreateVariableDetailsTable extends Migration {
     Schema::create('variable_details', function($table) {
       $table->increments('id');
       $table->text('description');
-      $table->string('status');
+      $table->string('status')->index();
       $table->integer('variable_id')->index();
-      $table->integer('company_id')->index();
+      $table->integer('company_id')->index()->nullable();
       $table->timestamps();
     });
   }

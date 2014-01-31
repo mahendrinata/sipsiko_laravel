@@ -12,7 +12,7 @@ class CreateUserTestVariablesTable extends Migration {
   public function up() {
     Schema::create('user_test_variables', function($table) {
       $table->increments('id');
-      $table->integer('value');
+      $table->integer('value')->nullable();
       $table->integer('user_test_id')->index();
       $table->integer('variable_id')->index();
       $table->timestamps();
