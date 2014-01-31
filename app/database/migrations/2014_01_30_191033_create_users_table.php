@@ -22,7 +22,7 @@ class CreateUsersTable extends Migration {
       $table->string('photo')->nullable();
       $table->text('description')->nullable();
       $table->string('password');
-      $table->string('activation_code')->nullable();
+      $table->string('token')->nullable();
       $table->string('status')->index();
       $table->integer('parent_id')->index()->nullable();
       $table->timestamps();

@@ -20,7 +20,7 @@ class UsersTableSeeder extends Seeder {
         'phone' => '+6285721821555',
         'description' => 'Administrator SIPSIKO APP',
         'password' => Hash::make($passwordDefault),
-        'activation_code' => md5(Hash::make($passwordDefault)),
+        'token' => md5(Hash::make($passwordDefault)),
         'status' => 'ACTIVE',
         'created_at' => date('Y-m-d H:i:s'),
         'updated_at' => date('Y-m-d H:i:s')
@@ -37,7 +37,7 @@ class UsersTableSeeder extends Seeder {
         'phone' => $faker->phoneNumber,
         'description' => $faker->text,
         'password' => Hash::make($passwordDefault),
-        'activation_code' => md5(Hash::make($passwordDefault)),
+        'token' => md5(Hash::make($passwordDefault)),
         'status' => 'ACTIVE',
         'created_at' => $faker->dateTime,
         'updated_at' => $faker->dateTime
