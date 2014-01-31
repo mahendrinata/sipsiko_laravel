@@ -11,13 +11,12 @@
   <thead>
     <tr>
       <th>Username</th>
-      <th>First_name</th>
-      <th>Middle_name</th>
+      <th>First Name</th>
+      <th>Middle Name</th>
+      <th>Last Name</th>
       <th>Email</th>
       <th>Address</th>
       <th>Phone</th>
-      <th>Description</th>
-      <th>Password</th>
     </tr>
   </thead>
 
@@ -27,11 +26,10 @@
       <td>{{{ $user->username }}}</td>
       <td>{{{ $user->first_name }}}</td>
       <td>{{{ $user->middle_name }}}</td>
+      <td>{{{ $user->last_name }}}</td>
       <td>{{{ $user->email }}}</td>
       <td>{{{ $user->address }}}</td>
       <td>{{{ $user->phone }}}</td>
-      <td>{{{ $user->description }}}</td>
-      <td>{{{ $user->password }}}</td>
       <td>{{ link_to_route('users.edit', 'Edit', array($user->id), array('class' => 'btn btn-info')) }}</td>
       <td>
         {{ Form::open(array('method' => 'DELETE', 'route' => array('users.destroy', $user->id))) }}
@@ -42,6 +40,9 @@
     @endforeach
   </tbody>
 </table>
+<div class="pagination">
+  <?php echo $users->links(); ?>
+</div>
 @else
 There are no users
 @endif

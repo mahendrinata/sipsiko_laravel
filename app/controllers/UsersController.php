@@ -19,7 +19,7 @@ class UsersController extends BaseController {
    * @return Response
    */
   public function index() {
-    $users = $this->user->all();
+    $users = $this->user->paginate(10);
 
     return View::make('users.index', compact('users'));
   }
